@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block styles %}
+{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static',
+filename='home.css')}}">
+{% endblock %}
+{% block content %}
+<!-- <h1>{{title}}</h1> -->
+<h1>{{book.title}}</h1>
+<p>Ce livre est écrit par l'autheur : {{book.author}}</p>
+<p>Il est à vendre au prix de {{book.price}} euros</p>
+<img src="{{ url_for('static', filename='images/'+book.img) }}"
+alt="{{book.title}}" title="{{book.title}}">
+{% endblock %}
