@@ -11,3 +11,4 @@ os.path. dirname ( __file__ ),p))
 from flask_sqlalchemy import SQLAlchemy
 app.config['SQLALCHEMY_DATABASE_URI'] = ('sqlite:///'+mkpath('../myapp.db'))
 db = SQLAlchemy(app)
+app.config["SECRET_KEY"] = "5a2c2f8a-427e-45ca-972d-7e7d976b6589"
