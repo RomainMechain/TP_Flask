@@ -2,13 +2,20 @@
 {% block styles %}
 {{ super() }}
 <link rel="stylesheet" href="{{ url_for('static',
-filename='home.css')}}">
+filename='detail.css')}}">
 {% endblock %}
 {% block content %}
 <!-- <h1>{{title}}</h1> -->
-<h1>{{book.title}}</h1>
-<p>Ce livre est écrit par l'autheur : {{book.author}}</p>
-<p>Il est à vendre au prix de {{book.price}} euros</p>
-<img src="{{ url_for('static', filename='images/'+book.img) }}"
-alt="{{book.title}}" title="{{book.title}}">
+<center>
+    <h1>{{book.title}}</h1>
+</center>
+<section id="description_livre">
+    <img src="{{ url_for('static', filename='images/'+book.img) }}"alt="{{book.title}}" id="img_livre" title="{{book.title}}" width=250px height=375px>
+    <center>
+    <div id="caracteristique_livre">
+        <p>Ce livre est écrit par l'autheur : {{book.author}}</p>
+        <p>Il est à vendre au prix de {{book.price}} euros</p>
+    </div>
+    </center>
+</section>
 {% endblock %}
