@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block main %}
+<h1>Edit author: {{ author.name }}</h1>
+<form role="form" method ="POST" action ="">
+    {{ form.hidden_tag() }}
+    <div class="form-group">
+        {{ form.name.label }} {{ form.name(size=50, class_="form-control")
+    </div >
+    <input class="btn btn-default" type="submit" value="Enregistrer">
+</form >
+{% endblock %}
