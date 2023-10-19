@@ -1,6 +1,6 @@
 from .app import app
 from flask import render_template
-from .models import get_sample
+from .models import get_sample,get_author
 
 @app.route("/")
 def home():
@@ -22,8 +22,8 @@ from wtforms import StringField , HiddenField
 from wtforms . validators import DataRequired
 
 class AuthorForm ( FlaskForm ):
-    id = HiddenField ('id')
-    name = StringField ('Nom', validators =[DataRequired()])
+    id = HiddenField('id')
+    name = StringField('Nom', validators =[DataRequired()])
 @app.route("/edit/author/<int:id>")
 def edit_author(id):
     a = get_author(id)
