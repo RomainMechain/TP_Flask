@@ -7,11 +7,11 @@ filename='home.css')}}">
 {% block content %}
 <h1>{{title}}</h1>
 <div class="sample">
-{% for x in books %}
-<a href="{{url_for('detail', id=x.id)}}">
-<img src="{{ url_for('static', filename='images/'+x.img) }}"
-alt="{{x.title}}" title="{{x.title}}">
-</a>
-{% endfor %}
+    {% for x in books %}
+    <a href="{{url_for('detail', id=x.id)}}" class="livre">
+        <img src="{{ url_for('static', filename='images/'+x.img) }}"
+        alt="{{x.title}}" title="{{x.title}}">
+    </a>
+    {% endfor %}
 </div>
 {% endblock %}
