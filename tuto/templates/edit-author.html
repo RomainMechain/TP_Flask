@@ -1,12 +1,25 @@
 {% extends "base.html" %}
 {% block content %}
-<h1>Edit author: {{ author.name }}</h1>
-<p>Quelque chose</p>
-<form role="form" method="POST" action="{{ url_for('save_author') }}">
-    {{ form.hidden_tag() }}
-    <div class="form-group">
-        {{ form.name.label }} {{ form.name(size=50, class_="form-control") }}
-    </div>
-    <input class="btn btn-default" type="submit" value="Enregistrer">
-</form>
+<h1 >Edit author : {{ author.name }}</h1 >
+<form role="form" method="POST"
+        action ="{{ url_for('save_author') }}">
+{{ form.hidden_tag() }}
+<div class=
+    {% if form.name.errors %}
+    "form-group has-error"
+    {% else %}
+    "form-group"
+    {% endif %}
+    >
+    {{ form.name.label }} {{ form.name(size =50,class_ ="form-control") }}
+</div >
+{% if form.name.errors %}
+<ul class="list -group">
+    {% for e in form.name.errors %}
+    <li class="list-group-item list-group-item-danger" >{{ e }}</li >
+    {% endfor %}
+</ul >
+{% endif %}
+<input class="btn btn-default" type="submit" value="Enregistrer">
+</form >
 {% endblock %}

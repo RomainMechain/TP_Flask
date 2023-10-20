@@ -1,9 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
+<h1>Page de validation</h1>
+<h2>validé</h2>
 <center>
-    <h1>Validé</h1>
-    <p>Le nom de l'autheur est {{ author.name }}</p>
-    <p>Son ID est {{ author.id }}</p>
+    <p>Le nom de l'autheur est : "{{ author.name }}"</p>
+    <p>Son ID est : "{{ author.id }}"</p>
 </center>
 
 {% endblock %}

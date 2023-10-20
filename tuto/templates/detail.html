@@ -13,7 +13,7 @@ filename='detail.css')}}">
     <img src="{{ url_for('static', filename='images/'+book.img) }}"alt="{{book.title}}" id="img_livre" title="{{book.title}}" width=250px height=375px>
     <center>
     <div id="caracteristique_livre">
-        <p>Ce livre est écrit par l'autheur : {{book.author}}</p>
+        <p>Ce livre est écrit par l'autheur : {{book.author.name}}</p>
         <p>Il est à vendre au prix de {{book.price}} euros</p>
     </div>
     </center>
